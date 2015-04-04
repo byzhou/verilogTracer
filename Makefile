@@ -6,7 +6,9 @@ $(topmodule):$(deffiles)
 all:
 	echo $(var);\
 	if [ -f $(deffiles) ] ;\
-		then make topmodule=$(deffiles) ;\
+		for i in $(deffiles);\
+			do make all topmodule=$i --debug
+		done
 	else ;\
 		then echo "end of leaves" ;\
 	fi
